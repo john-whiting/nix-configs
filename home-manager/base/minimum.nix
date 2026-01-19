@@ -25,9 +25,15 @@
     };
   };
 
-  # Enable home-manager and git
+  imports = [
+    ./programs/zsh.nix
+  ];
 
   programs.home-manager.enable = true;
+  programs.zoxide.enable = true;
+  programs.mise.enable = true;
+  programs.starship.enable = true;
+  programs.starship.enableZshIntegration = true;
 
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
