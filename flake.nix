@@ -12,7 +12,13 @@
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Ghostty
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
+
     nixvim-config.url = "path:./nixvim";
+
   };
 
   outputs =
