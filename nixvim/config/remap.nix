@@ -3,12 +3,12 @@
     {
       key = "J";
       action = ":m '>+1<CR>gv=gv";
-      mode = "n";
+      mode = "v";
     }
     {
       key = "K";
       action = ":m '<-2<CR>gv=gv";
-      mode = "n";
+      mode = "v";
     }
 
     {
