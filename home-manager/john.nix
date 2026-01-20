@@ -9,6 +9,8 @@
     # If you want to use home-manager modules from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModule
 
+    ./base/cloud.nix
+    ./base/kubernetes.nix
     ./base/minimum.nix
     ./base/programing.nix
     ./base/social.nix
