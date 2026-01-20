@@ -4,8 +4,9 @@
 }:
 {
   home.packages = with pkgs; [
+    k9s
     kubectl
     kubelogin
-    k9s
+    kyverno
   ];
 }
