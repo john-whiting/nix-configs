@@ -9,6 +9,7 @@
   ];
 
   home.packages = with pkgs; [
+    markdownlint-cli2 # needed for markdown files in neovim
     vscode
   ];
 }
