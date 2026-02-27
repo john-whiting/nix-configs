@@ -4,6 +4,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # NixOS Hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -25,11 +26,16 @@
     {
       self,
       nixpkgs,
+      nixpkgs-unstable,
       home-manager,
       ...
     }@inputs:
     let
       inherit (self) outputs;
+      unstable = import nixpkgs-unstable {
+        system = "x86_64-linux";
+        config.allowUnfree = true; # If needed
+      };
     in
     {
       # NixOS configuration entrypoint
@@ -51,13 +57,13 @@
       homeConfigurations = {
         "john@personal" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs unstable; };
           # > Our main home-manager configuration file <
           modules = [ ./home-manager/john.nix ];
         };
         "john@kv" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs unstable; };
           # > Our main home-manager configuration file <
           modules = [ ./home-manager/john-kv.nix ];
         };

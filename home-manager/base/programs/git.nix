@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  unstable,
   ...
 }:
 {
@@ -37,5 +38,9 @@
 
       lfs.enable = true;
     };
+
+    home.packages = [
+      unstable.gitbutler
+    ];
   };
 }

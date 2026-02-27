@@ -4,6 +4,7 @@
 }:
 {
   config = {
+    programs.direnv.enable = true;
     programs.zsh = {
       enable = true;
       enableCompletion = true;
@@ -53,6 +54,7 @@
       initExtra = ''
         eval "$(zoxide init zsh)"
         eval "$(mise activate zsh)"
+        eval "$(direnv hook zsh)"
 
         # Control + backspace and Control + delete
         bindkey '^H' backward-kill-word
