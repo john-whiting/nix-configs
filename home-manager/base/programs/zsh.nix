@@ -35,9 +35,6 @@
 
         # Neovim
         "nv" = "nvim -p";
-
-        # Markdown lint
-        "markdownlint" = "markdownlint-cli2";
       };
 
       zplug = {

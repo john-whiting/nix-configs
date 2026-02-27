@@ -85,6 +85,10 @@
         enable = true;
       };
 
+      astro = {
+        enable = true;
+      };
+
       dockerls = {
         enable = true;
       };
