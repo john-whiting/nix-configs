@@ -61,6 +61,12 @@
         flake-registry = "";
         # Workaround for https://github.com/NixOS/nix/issues/9574
         nix-path = config.nix.nixPath;
+
+        trusted-users = [
+          "root"
+          "john"
+          "john-kv"
+        ];
       };
       # Opinionated: disable channels
       channel.enable = false;
