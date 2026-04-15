@@ -127,10 +127,16 @@
     keymaps = {
       # Diagnostic keymaps
       diagnostic = {
-        "<leader>q" = {
+        "<leader>oq" = {
           mode = "n";
           action = "setloclist";
-          desc = "Open diagnostic [Q]uickfix list";
+          desc = "[O]pen diagnostic [Q]uickfix list";
+
+        };
+        "<leader>of" = {
+          mode = "n";
+          action = "open_float";
+          desc = "[O]pen diagnostic [F]loat";
         };
       };
 
