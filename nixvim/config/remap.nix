@@ -14,7 +14,7 @@
     {
       key = "<leader>p";
       action = ''"_dP'';
-      mode = "n";
+      mode = "v";
     }
     {
       key = "<leader>d";
