@@ -24,6 +24,7 @@ in
     ./config/plugins/neo-tree.nix
     ./config/plugins/fugitive.nix
     ./config/plugins/multicursor.nix
+    ./config/plugins/harpoon.nix
 
     ./config/remap.nix
   ];
@@ -192,42 +193,6 @@ in
         action = "<cmd>echo 'Use j to move!!'<CR>";
       }
     */
-    # Keybinds to make split navigation easier.
-    #  Use CTRL+<hjkl> to switch between windows
-    #
-    #  See `:help wincmd` for a list of all window commands
-    {
-      mode = "n";
-      key = "<C-h>";
-      action = "<C-w><C-h>";
-      options = {
-        desc = "Move focus to the left window";
-      };
-    }
-    {
-      mode = "n";
-      key = "<C-l>";
-      action = "<C-w><C-l>";
-      options = {
-        desc = "Move focus to the right window";
-      };
-    }
-    {
-      mode = "n";
-      key = "<C-j>";
-      action = "<C-w><C-j>";
-      options = {
-        desc = "Move focus to the lower window";
-      };
-    }
-    {
-      mode = "n";
-      key = "<C-k>";
-      action = "<C-w><C-k>";
-      options = {
-        desc = "Move focus to the upper window";
-      };
-    }
   ];
 
   # https://nix-community.github.io/nixvim/NeovimOptions/autoGroups/index.html
@@ -264,7 +229,7 @@ in
         source = "if_many";
       };
       underline = {
-        severity.__raw = ''vim.diagnostic.severity.ERROR'';
+        severity.__raw = "vim.diagnostic.severity.ERROR";
       };
       signs.__raw = ''
         vim.g.have_nerd_font and {
