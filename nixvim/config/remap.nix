@@ -19,12 +19,18 @@
     {
       key = "<leader>d";
       action = ''"_d'';
-      mode = "n";
+      mode = [
+        "n"
+        "v"
+      ];
     }
     {
       key = "<leader>c";
       action = ''"_c'';
-      mode = "n";
+      mode = [
+        "n"
+        "v"
+      ];
     }
     {
       key = "<leader>y";
