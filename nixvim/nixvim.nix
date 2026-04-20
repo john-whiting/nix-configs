@@ -12,6 +12,7 @@ in
     ./config/plugins/which-key.nix
     ./config/plugins/telescope.nix
     ./config/plugins/lsp.nix
+    ./config/plugins/rustaceanvim.nix
     ./config/plugins/conform.nix
     ./config/plugins/blink-cmp.nix
     ./config/plugins/todo-comments.nix

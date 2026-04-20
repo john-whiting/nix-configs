@@ -69,7 +69,7 @@
     # NOTE: See `https://nix-community.github.io/nixvim/lsp/servers/index.html` for a list of pre-configured LSPs
     servers = {
       rust_analyzer = {
-        enable = true;
+        enable = false;
         # Do not install Rustc and cargo here.
         # Putting "false" disables the warnings on build
         # I want the lsp server to be active *in case* Rustc and Cargo are present in the environment
