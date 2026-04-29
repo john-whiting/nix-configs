@@ -1,7 +1,11 @@
 {
   pkgs,
+  inputs,
   ...
 }:
+let
+  system = pkgs.stdenv.hostPlatform.system;
+in
 {
   nixpkgs = {
     # You can add overlays here
@@ -34,10 +38,13 @@
   programs.mise.enable = true;
   programs.starship.enable = true;
   programs.starship.enableZshIntegration = true;
+  programs.btop.enable = true;
 
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
+    age
     nerd-fonts.jetbrains-mono
+    inputs.ragenix.packages.${system}.default
   ];
 
   # Nicely reload system units when changing configs

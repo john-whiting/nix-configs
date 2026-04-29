@@ -15,6 +15,7 @@
     ./base/minimum.nix
     ./base/programing.nix
     ./base/social.nix
+    ./base/networking.nix
   ];
 
   home = {

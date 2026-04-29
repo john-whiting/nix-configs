@@ -13,6 +13,7 @@
     ./base/kubernetes.nix
     ./base/minimum.nix
     ./base/programing.nix
+    ./base/networking.nix
   ];
 
   home = {

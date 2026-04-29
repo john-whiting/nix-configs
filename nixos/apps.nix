@@ -4,6 +4,9 @@
   inputs,
   ...
 }:
+let
+  system = pkgs.stdenv.hostPlatform.system;
+in
 {
   programs = {
     firefox.enable = true;
@@ -18,7 +21,8 @@
       wget
     ]
     ++ [
-      inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.ragenix.packages.${system}.default
+      inputs.ghostty.packages.${system}.default
     ];
 
   virtualisation.docker.enable = true;

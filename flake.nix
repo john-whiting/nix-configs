@@ -14,12 +14,9 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Ghostty
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
-
+    ghostty.url = "github:ghostty-org/ghostty";
+    ragenix.url = "github:yaxitech/ragenix";
     nixvim-config.url = "path:./nixvim";
-
   };
 
   outputs =
