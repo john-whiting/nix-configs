@@ -93,6 +93,14 @@
         enable = true;
       };
 
+      # Python
+      ty = {
+        enable = true;
+      };
+      ruff = {
+        enable = true;
+      };
+
       # Nix lsp
       nil_ls = {
         enable = true;
