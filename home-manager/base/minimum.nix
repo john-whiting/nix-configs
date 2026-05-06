@@ -31,6 +31,7 @@ in
 
   imports = [
     ./programs/zsh.nix
+    ./secrets.nix
   ];
 
   programs.home-manager.enable = true;

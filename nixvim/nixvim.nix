@@ -1,13 +1,14 @@
 {
   pkgs,
   ...
-}:
+}@inputs:
 let
   enable_nerd_fonts = false;
 in
 {
   imports = [
     # Plugins
+    (import ./config/plugins/secrets.nix inputs)
     ./config/plugins/gitsigns.nix
     ./config/plugins/which-key.nix
     ./config/plugins/telescope.nix
@@ -25,7 +26,7 @@ in
     ./config/plugins/neo-tree.nix
     ./config/plugins/fugitive.nix
     ./config/plugins/multicursor.nix
-    ./config/plugins/harpoon.nix
+    (import ./config/plugins/minuet.nix inputs)
 
     ./config/remap.nix
   ];

@@ -15,8 +15,13 @@
 
     # Ghostty
     ghostty.url = "github:ghostty-org/ghostty";
+
     ragenix.url = "github:yaxitech/ragenix";
+    secrets.url = "git+ssh://git@github.jwhiting.dev/john-whiting/nix-secrets.git";
+
     nixvim-config.url = "path:./nixvim";
+    nixvim-config.inputs.nixpkgs.follows = "nixpkgs";
+    # nixvim-config.inputs.secrets.follows = "secrets";
   };
 
   outputs =
@@ -25,6 +30,8 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
+      ragenix,
+      secrets,
       ...
     }@inputs:
     let
@@ -39,10 +46,11 @@
       # Available through 'nixos-rebuild switch --flake .#lt14s'
       nixosConfigurations = {
         lt14s = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = { inherit inputs outputs secrets; };
           # > Our main nixos configuration file <
           modules = [
             ./nixos/configuration.nix
+            ragenix.nixosModules.default
           ];
         };
       };
@@ -54,15 +62,35 @@
       homeConfigurations = {
         "john@personal" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs unstable; };
+          extraSpecialArgs = {
+            inherit
+              inputs
+              outputs
+              unstable
+              secrets
+              ;
+          };
           # > Our main home-manager configuration file <
-          modules = [ ./home-manager/john.nix ];
+          modules = [
+            ragenix.homeManagerModules.default
+            ./home-manager/john.nix
+          ];
         };
         "john@kv" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs unstable; };
+          extraSpecialArgs = {
+            inherit
+              inputs
+              outputs
+              unstable
+              secrets
+              ;
+          };
           # > Our main home-manager configuration file <
-          modules = [ ./home-manager/john-kv.nix ];
+          modules = [
+            ragenix.homeManagerModules.default
+            ./home-manager/john-kv.nix
+          ];
         };
       };
     };

@@ -59,11 +59,21 @@
             config,
             pkgs,
             lib,
+            unstable,
             ...
           }:
           {
-            imports = [ inputs.nixvim.nixosModules.nixvim ];
-            programs.nixvim = import ./nixvim.nix { inherit pkgs lib config; };
+            imports = [
+              inputs.nixvim.nixosModules.nixvim
+            ];
+            programs.nixvim = import ./nixvim.nix {
+              inherit
+                pkgs
+                lib
+                config
+                unstable
+                ;
+            };
           };
 
         homeManagerModules.default =
@@ -71,11 +81,24 @@
             config,
             pkgs,
             lib,
+            unstable,
             ...
           }:
+          let
+            importOptions = {
+              inherit
+                pkgs
+                lib
+                config
+                unstable
+                ;
+            };
+          in
           {
-            imports = [ inputs.nixvim.homeModules.nixvim ];
-            programs.nixvim = import ./nixvim.nix { inherit pkgs lib config; };
+            imports = [
+              inputs.nixvim.homeModules.nixvim
+            ];
+            programs.nixvim = import ./nixvim.nix importOptions;
           };
 
         darwinModules.default =
@@ -83,11 +106,21 @@
             config,
             pkgs,
             lib,
+            unstable,
             ...
           }:
           {
-            imports = [ inputs.nixvim.darwinModules.nixvim ];
-            programs.nixvim = import ./nixvim.nix { inherit pkgs lib config; };
+            imports = [
+              inputs.nixvim.darwinModules.nixvim
+            ];
+            programs.nixvim = import ./nixvim.nix {
+              inherit
+                pkgs
+                lib
+                config
+                unstable
+                ;
+            };
           };
       };
     };
