@@ -26,6 +26,7 @@ in
     ./config/plugins/neo-tree.nix
     ./config/plugins/fugitive.nix
     ./config/plugins/multicursor.nix
+    ./config/plugins/harpoon.nix
     (import ./config/plugins/minuet.nix inputs)
 
     ./config/remap.nix
