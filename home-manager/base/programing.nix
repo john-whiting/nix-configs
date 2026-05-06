@@ -9,6 +9,11 @@
     ./programs/git.nix
   ];
 
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
+
   home.packages = with pkgs; [
     unstable.devenv
     unstable.opencode
