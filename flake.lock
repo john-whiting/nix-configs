@@ -487,11 +487,11 @@
     },
     "secrets": {
       "locked": {
-        "lastModified": 1778043026,
-        "narHash": "sha256-0TCCYPw2jmPrNRwvL/uG1bsWVLkjZ+E8wDk23hf85uE=",
+        "lastModified": 1778097341,
+        "narHash": "sha256-SgGB12xVxxki64rpoUfq3G0wt+xaOb0RVMCipSnt7I4=",
         "ref": "refs/heads/main",
-        "rev": "550e88b0f157b3ebef347388d3b423a6a0df883c",
-        "revCount": 3,
+        "rev": "57d7676dca38c715b88d44547b06fe8929707657",
+        "revCount": 4,
         "type": "git",
         "url": "ssh://git@github.jwhiting.dev/john-whiting/nix-secrets.git"
       },
