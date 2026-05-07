@@ -71,7 +71,7 @@
         bindkey '^X^e' edit-command-line
 
         devc () {
-          compose_file=$(find .devcontainer -regex '.*/docker-compose.ya?ml')
+          compose_file=$(find .devcontainer -regextype posix-extended -regex '.*\/(docker-)?compose.ya?ml')
           compose_file_data=$(docker compose -f "$compose_file" config 2> /dev/null)
 
           if [[ "$1" = "code" ]]
