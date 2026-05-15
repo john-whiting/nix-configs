@@ -17,6 +17,7 @@
   home.packages = with pkgs; [
     unstable.devenv
     unstable.opencode
+    unstable.claude-code
     openssl
     markdownlint-cli2 # needed for markdown files in neovim
     (writeShellScriptBin "markdownlint" ''
