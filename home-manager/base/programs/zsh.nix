@@ -49,6 +49,11 @@
       };
 
       initExtra = ''
+        # Activate nix single-user mode
+        if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+          . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+        fi
+
         eval "$(zoxide init zsh)"
         eval "$(mise activate zsh)"
         eval "$(direnv hook zsh)"
@@ -141,10 +146,6 @@
         kubectx() {
           kubectl config use-context $(kubectl config get-contexts -o name | fzy)
         }
-
-        if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
-          . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-        fi
       '';
     };
   };
