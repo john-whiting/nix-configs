@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  unstable,
+  pkgs,
   ...
 }:
 {
@@ -40,7 +40,7 @@
     };
 
     home.packages = [
-      unstable.gitbutler
+      pkgs.gitbutler
     ];
   };
 }
