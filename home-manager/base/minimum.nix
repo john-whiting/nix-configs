@@ -43,6 +43,7 @@ in
 
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
+    obsidian
     age
     nerd-fonts.jetbrains-mono
     inputs.ragenix.packages.${system}.default
