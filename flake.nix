@@ -22,6 +22,9 @@
     nixvim-config.url = "path:./nixvim";
     nixvim-config.inputs.nixpkgs.follows = "nixpkgs";
     # nixvim-config.inputs.secrets.follows = "secrets";
+
+    winapps.url = "github:winapps-org/winapps";
+    winapps.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

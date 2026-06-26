@@ -16,6 +16,7 @@
     ./base/programing.nix
     ./base/social.nix
     ./base/networking.nix
+    ./base/winapps.nix
   ];
 
   home = {

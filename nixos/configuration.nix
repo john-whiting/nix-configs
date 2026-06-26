@@ -67,6 +67,13 @@
           "john"
           "john-kv"
         ];
+
+        substituters = [
+          "https://winapps.cachix.org/"
+        ];
+        trusted-public-keys = [
+          "winapps.cachix.org-1:HI82jWrXZsQRar/PChgIx1unmuEsiQMQq+zt05CD36g="
+        ];
       };
       # Opinionated: disable channels
       channel.enable = false;
