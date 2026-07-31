@@ -57,6 +57,7 @@
         eval "$(zoxide init zsh)"
         eval "$(mise activate zsh)"
         eval "$(direnv hook zsh)"
+        eval "$(devenv hook zsh)"
 
         # Use familiar "emacs"-like keybinds
         bindkey -e

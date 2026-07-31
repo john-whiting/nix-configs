@@ -22,6 +22,7 @@
     ./dns.nix
     ./i18n.nix
     ./networking.nix
+    ./printing.nix
     ./security.nix
     ./users.nix
 
