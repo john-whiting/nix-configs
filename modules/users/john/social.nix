@@ -2,6 +2,7 @@
   perSystem = {
     nixpkgs.config.allowUnfreePackages = [
       "discord"
+      "discord-unwrapped"
     ];
   };
 
