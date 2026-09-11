@@ -18,6 +18,10 @@
                 type = lib.types.singleLineStr;
                 default = name;
               };
+              description = lib.mkOption {
+                type = lib.types.singleLineStr;
+                description = "What this configuration contains. Rendered into the README.";
+              };
               email = lib.mkOption {
                 type = lib.types.nullOr lib.types.singleLineStr;
               };

@@ -32,6 +32,8 @@
   users."john[cli]" = {
     name = "john";
 
+    description = "CLI only — shell, git, programming, cloud, networking, secrets";
+
     fullName = "John Whiting";
     email = "john@jwhiting.dev";
 
@@ -43,6 +45,8 @@
   };
 
   users.john = config.users."john[cli]" // {
+    description = "CLI + GUI — browsers, fonts, CAD, notetaking, social";
+
     home.modules = config.users."john[cli]".home.modules ++ [
       config.home.user-modules.john.gui
     ];

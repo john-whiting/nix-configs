@@ -22,6 +22,10 @@
                 type = lib.types.singleLineStr;
                 default = name;
               };
+              description = lib.mkOption {
+                type = lib.types.singleLineStr;
+                description = "What this machine is. Rendered into the README.";
+              };
               modules = lib.mkOption {
                 type = lib.types.listOf lib.types.deferredModule;
               };

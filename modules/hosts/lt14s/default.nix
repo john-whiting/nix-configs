@@ -39,6 +39,8 @@
   };
 
   hosts.lt14s = {
+    description = "ThinkPad — GUI, gaming, docking, printing, fingerprint, audio, virtualization";
+
     modules = [ config.nixos.modules.lt14s ];
     users = [
       {
