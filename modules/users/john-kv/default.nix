@@ -30,6 +30,10 @@ in
       description = "CLI only, different git identity";
 
       email = "jwhiting@kinetic-vision.com";
+
+      home.modules = config.users."john[cli]".home.modules ++ [
+        config.home.user-modules.john-kv.cli
+      ];
     }
   ];
 
