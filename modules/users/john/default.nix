@@ -22,6 +22,8 @@
       with config.home.user-modules.john;
       [
         cad
+        minecraft
+        virtualization
         fonts
         notetaking
         programming-gui

@@ -17,6 +17,7 @@ in
       with config.home.user-modules.john;
       [
         fonts
+        virtualization
       ];
   };
 

@@ -49,6 +49,7 @@
         extraGroups = [
           "networkmanager"
           "docker"
+          "libvirtd"
         ];
       }
       {
@@ -57,6 +58,7 @@
         extraGroups = [
           "networkmanager"
           "docker"
+          "libvirtd"
         ];
       }
     ];
