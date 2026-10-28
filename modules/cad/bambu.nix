@@ -16,6 +16,18 @@
                 sha256 = "sha256:60ef861e204e7d6da518619bd7b7c5ab2ae2a1bd9a5fb79d10b7c4495f73b172";
               };
 
+              # wrapType2 only installs the binary, so copy the AppImage's desktop entry and icons for launchers
+              extraInstallCommands =
+                let
+                  contents = super.appimageTools.extract { inherit pname version src; };
+                in
+                ''
+                  install -Dm444 ${contents}/BambuStudio.desktop $out/share/applications/BambuStudio.desktop
+                  substituteInPlace $out/share/applications/BambuStudio.desktop \
+                    --replace-fail 'Exec=AppRun' 'Exec=${pname}'
+                  cp -r ${contents}/usr/share/icons $out/share/
+                '';
+
               profile = ''
                 export SSL_CERT_FILE="${super.cacert}/etc/ssl/certs/ca-bundle.crt"
                 export GIO_MODULE_DIR="${super.glib-networking}/lib/gio/modules/"
