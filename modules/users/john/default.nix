@@ -21,6 +21,7 @@
       with config.home.user-modules.john;
       [
         cad
+        password-manager
         minecraft
         virtualization
         fonts
@@ -46,7 +47,7 @@
   };
 
   users.john = config.users."john[cli]" // {
-    description = "CLI + GUI — browsers, fonts, CAD, notetaking, social";
+    description = "CLI + GUI — browsers, fonts, CAD, password manager, notetaking, social";
 
     home.modules = config.users."john[cli]".home.modules ++ [
       config.home.user-modules.john.gui
