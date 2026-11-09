@@ -10,7 +10,6 @@
         networking
         programming
         shell
-        secrets
       ];
 
     home.stateVersion = "25.05";

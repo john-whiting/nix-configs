@@ -1,9 +1,11 @@
 {
-  home.user-modules.john.secrets =
+  home.modules.secrets =
     { pkgs, ... }:
     {
       home.packages = with pkgs; [
         age
+        sops
+        ssh-to-age
       ];
     };
 }
