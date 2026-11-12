@@ -24,7 +24,7 @@ Modules are composed through four option trees:
 
 | Config | Contents |
 | --- | --- |
-| `john` | CLI + GUI — browsers, fonts, CAD, notetaking, social |
+| `john` | CLI + GUI — browsers, fonts, CAD, password manager, notetaking, social |
 | `john@kv` | CLI + GUI, different git identity |
 | `john[cli]` | CLI only — shell, git, programming, cloud, networking, secrets |
 | `john[cli]@kv` | CLI only, different git identity |

@@ -2,7 +2,6 @@
   perSystem = {
     nixpkgs.config.allowUnfreePackages = [
       "chatgpt"
-      "claude-code"
     ];
   };
 
@@ -11,7 +10,6 @@
     {
       home.packages = with pkgs; [
         opencode
-        claude-code
         codex
       ];
     };

@@ -82,13 +82,13 @@
       "locked": {
         "lastModified": 1792905615,
         "narHash": "sha256-KdGEzlRQPHBbNPD+AChjry8eWEx0TCrGKy1Hkacj+bA=",
-        "owner": "vic",
+        "owner": "denful",
         "repo": "flake-file",
         "rev": "7b08dbc223bb1a758a515aad9653a6bf196bc772",
         "type": "github"
       },
       "original": {
-        "owner": "vic",
+        "owner": "denful",
         "repo": "flake-file",
         "type": "github"
       }
@@ -196,24 +196,24 @@
       "locked": {
         "lastModified": 1788467110,
         "narHash": "sha256-ljEMTXP/rH0tOvDzc9gzwww6KcHRPRnEHzd9lK48V7s=",
-        "owner": "vic",
+        "owner": "denful",
         "repo": "import-tree",
         "rev": "eb1b52eaecc57f7c136d07ae8a93e724dfecac46",
         "type": "github"
       },
       "original": {
-        "owner": "vic",
+        "owner": "denful",
         "repo": "import-tree",
         "type": "github"
       }
     },
     "john-nvim-secrets": {
       "locked": {
-        "lastModified": 1782499383,
-        "narHash": "sha256-CDR5XBhR9UX6X3DDgoV1roVNMcKLgihJYU8cBLqTMUU=",
+        "lastModified": 1794197274,
+        "narHash": "sha256-99tNprAWYNcNshMSii9Agq7bFnv0mx/nAi7Ba3OzanE=",
         "ref": "refs/heads/main",
-        "rev": "e94d6291a319254f5d429bc3f3641de29b8efcd3",
-        "revCount": 5,
+        "rev": "f88d2a7404353485fd3406b4f156c829a14a2088",
+        "revCount": 6,
         "type": "git",
         "url": "ssh://git@github.jwhiting.dev/john-whiting/nix-secrets.git"
       },

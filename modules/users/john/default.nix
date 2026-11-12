@@ -9,6 +9,7 @@
         git
         networking
         programming
+        secrets
         shell
       ];
 
