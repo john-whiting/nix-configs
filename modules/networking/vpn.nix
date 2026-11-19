@@ -94,9 +94,43 @@ in
         };
         vpn-secrets.password = "$PIA_PASSWORD";
         ipv4.method = "auto";
-        # PIA's OpenVPN servers don't carry IPv6.
+        # PIA's OpenVPN servers don't carry IPv6; see ipv6Block below for the leak protection.
         ipv6.method = "ignore";
       };
+
+      # The tunnel is IPv4-only, so the physical interface's IPv6 route would bypass it.
+      # While a PIA profile is up, reject all outbound IPv6 except loopback (like PIA's own app does).
+      # Reject rather than drop so apps fall back to IPv4 immediately.
+      ipv6Block = pkgs.writeShellScript "pia-ipv6-block" ''
+        case "$CONNECTION_UUID" in
+          ${lib.concatMapStringsSep "|" uuidOf (lib.attrNames regions)}) ;;
+          *) exit 0 ;;
+        esac
+
+        nft=${pkgs.nftables}/bin/nft
+        case "$2" in
+          vpn-up)
+            $nft -f - <<'EOF'
+        table inet pia_ipv6_block
+        delete table inet pia_ipv6_block
+        table inet pia_ipv6_block {
+          chain output {
+            type filter hook output priority 0; policy accept;
+            oifname "lo" accept
+            meta nfproto ipv6 reject with icmpv6 admin-prohibited
+          }
+          chain forward {
+            type filter hook forward priority 0; policy accept;
+            meta nfproto ipv6 reject with icmpv6 admin-prohibited
+          }
+        }
+        EOF
+            ;;
+          vpn-down)
+            $nft delete table inet pia_ipv6_block 2>/dev/null || true
+            ;;
+        esac
+      '';
     in
     # mkMerge, not `//`: a shallow `//` would let the second block's `networking` replace the first's.
     lib.mkMerge [
@@ -112,6 +146,8 @@ in
           environmentFiles = [ config.age.secrets.pia-credentials.path ];
           profiles = lib.mapAttrs' (region: ovpn: lib.nameValuePair "pia-${region}" (mkProfile region ovpn)) regions;
         };
+
+        networking.networkmanager.dispatcherScripts = [ { source = ipv6Block; } ];
       })
     ];
 }
