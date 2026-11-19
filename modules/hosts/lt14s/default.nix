@@ -31,6 +31,9 @@
       ];
     };
 
+    # Host key for system-level agenix secrets (the system-lt14s recipient in the secrets repo).
+    age.identityPaths = [ "/etc/ssh/id_ed25519" ];
+
     hardware.graphics.enable = true;
     hardware.graphics.enable32Bit = true;
 

@@ -209,11 +209,11 @@
     },
     "john-nvim-secrets": {
       "locked": {
-        "lastModified": 1794197274,
-        "narHash": "sha256-99tNprAWYNcNshMSii9Agq7bFnv0mx/nAi7Ba3OzanE=",
+        "lastModified": 1795121537,
+        "narHash": "sha256-aqr+XEvsQsAvoWpbQZMSW9SXMPoez+YJJjZnl3O64vg=",
         "ref": "refs/heads/main",
-        "rev": "f88d2a7404353485fd3406b4f156c829a14a2088",
-        "revCount": 6,
+        "rev": "bc417563e661372631cf1a6851b7514d7fb01278",
+        "revCount": 7,
         "type": "git",
         "url": "ssh://git@github.jwhiting.dev/john-whiting/nix-secrets.git"
       },
