@@ -1,7 +1,7 @@
 ---
 name: task
-description: Record a task (title, description, completion criteria) to .claude/tasks/<slug>/task.md for the other jw skills.
-argument-hint: "Title: ... Description: ... Completion Criteria: ..."
+description: Record a task (title, description, completion criteria) to .claude/tasks/<slug>/task.md for the other jw skills, from given fields or a Jira issue.
+argument-hint: "Title: ... Description: ... Completion Criteria: ... | --jira <KEY-123 | URL>"
 disable-model-invocation: true
 ---
 
