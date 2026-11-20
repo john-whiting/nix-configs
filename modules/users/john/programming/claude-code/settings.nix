@@ -4,6 +4,8 @@
     programs.claude-code.settings = {
       theme = "dark";
 
+      attribution.commit = "";
+
       permissions.allow = [
         "Bash(git commit:*)"
         "Bash(git add:*)"
